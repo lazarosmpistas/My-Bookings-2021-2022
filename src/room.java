@@ -22,9 +22,7 @@ public class room {
     public int ReturnStars(){
         return stars;
     }
-    public int ReturnMeters(){
-        return sqrMeters;
-    }
+    public int ReturnMeters(){return sqrMeters;}
     public double ReturnPrice(){
         return price;
     }
@@ -62,7 +60,4 @@ public class room {
     public void SetName(String x){
         name = x;
     }
-
-
-
 }
