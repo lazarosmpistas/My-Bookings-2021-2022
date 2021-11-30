@@ -29,5 +29,4 @@ public class dateConverter {
         converted += d;
         return converted;
     }
-
 }
