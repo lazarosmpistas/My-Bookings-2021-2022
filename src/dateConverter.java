@@ -1,6 +1,6 @@
 public class dateConverter {
 
-    public int dateConversion(int d, int m, int y){
+    public static int  dateConversion(int d, int m, int y){
         int converted=0;
         for(int i=globals.startYear; i<y; i++){
             if(leapYears.isLeapYear(y)){
@@ -29,4 +29,5 @@ public class dateConverter {
         converted += d;
         return converted;
     }
+
 }
