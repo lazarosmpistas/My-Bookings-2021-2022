@@ -1,21 +1,23 @@
 import java.util.*;
 
 public class room {
-    private int stars=0;
-    private int sqrMeters=0;
-    private double price=0;
-    private boolean wifi=false;
-    private boolean parking=false;
-    private boolean booked=false;
-    private String name = new String();
+    private int stars;
+    private int sqrMeters;
+    private double price;
+    private boolean wifi;
+    private boolean parking;
+    private String name;
 
-    public room(int stars, int meters, double price, boolean wifi, boolean parking, boolean booked, String name){
+    public HashMap<Integer, dates> datesBooked;
+
+
+    public room(int stars, int meters, double price, boolean wifi, boolean parking, String name){
+        datesBooked = new HashMap<>();
         this.stars = stars;
         sqrMeters = meters;
         this.price = price;
         this.wifi = wifi;
         this.parking = parking;
-        this.booked = booked;
         this.name = name;
     }
     //getters
@@ -31,9 +33,6 @@ public class room {
     }
     public boolean ReturnParking(){
         return parking;
-    }
-    public boolean ReturnBooked(){
-        return booked;
     }
     public String ReturnName(){
         return name;
@@ -54,10 +53,20 @@ public class room {
     public void SetParking(boolean x){
         parking = x;
     }
-    public void SetBooked(boolean x){
-        booked = x;
-    }
-    public void SetName(String x){
-        name = x;
+    public void SetName(String x){ name = x; }
+
+    public boolean bookDate(dates checkIn, dates checkOut){
+        int checkInConverted, checkOutConverted;
+        checkInConverted = dateConverter.dateToConverted(checkIn);
+        checkOutConverted = dateConverter.dateToConverted(checkOut);
+        for(int i=checkInConverted; i<checkOutConverted; i++){
+            if(datesBooked.containsKey(i)){
+                return false;
+            }
+        }
+        for(int i=checkInConverted; i<checkOutConverted; i++){
+            datesBooked.put(i, dateConverter.convertedToDate(i));
+        }
+        return true;
     }
 }

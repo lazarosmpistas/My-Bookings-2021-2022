@@ -1,19 +1,9 @@
+/*
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class bookedDates{
 
-    /*public dates(int year){
-        globals x;
-        time years[];
-        for(int i=0; i<5; i++){
-            years[i] = new time(x.startYear+i);
-        }
-        datesBooked1 = new boolean[];
-        for(int i=0; i<days; i++){
-            dateBooked[i] = false;
-        }
-    }
-    */
     ArrayList<Integer> datesBooked;
     public bookedDates(){
         datesBooked = new ArrayList<>();
@@ -54,3 +44,4 @@ public class bookedDates{
     }
 
 }
+*/
